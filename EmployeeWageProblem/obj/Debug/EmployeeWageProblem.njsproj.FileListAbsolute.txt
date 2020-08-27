@@ -1,0 +1,3 @@
+D:\C-Sharp\EmployeeWageProblem\EmployeeWageProblem\obj\Debug\EmployeeWageProblem.njsprojAssemblyReference.cache
+D:\C-Sharp\EmployeeWageProblem\EmployeeWageProblem\obj\Debug\EmployeeWageProblem.njsproj.CoreCompileInputs.cache
+D:\C-Sharp\EmployeeWageProblem\EmployeeWageProblem\bin\Microsoft.NodejsTools.WebRole.dll

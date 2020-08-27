@@ -11,14 +11,18 @@ var employeeHpurs;
 let employeeCheck = Math.round(Math.random() * 10) % 3;
 console.log(employeeCheck);
 
-if (employeeCheck == IS_FULL_TIME) {
-    employeeHpurs = 8;
+
+switch (employeeCheck) {
+    case IS_FULL_TIME:
+        employeeHpurs = 8;
+        break;
+    case IS_PART_TIME:
+        employeeHpurs = 4;
+        break;
+    default:
+        employeeHpurs = 0;
+        break;
 }
-else if (employeeCheck == IS_PART_TIME) {
-    employeeHpurs = 4;
-}
-else {
-    employeeHpurs = 0;
-}
+
 salary = employeeHpurs * EMPLOYEE_RATE_PER_HOUR;
 console.log('Employee Daily Wage is ' + salary + ' Rs');

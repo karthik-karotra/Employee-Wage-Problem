@@ -1,13 +1,24 @@
 console.log('Welcome to Employee Wage Simulator');
 
 //CONSTANTS
-const IS_EMPLOYEE_PRESENT = 1;
+const IS_PART_TIME = 1;
+const IS_FULL_TIME = 2;
 const EMPLOYEE_RATE_PER_HOUR = 20;
-const EMPLOYEE_HOURS = 8;
 
 //VARIABLES
 var salary;
-let employeeAttendance = Math.floor(Math.random() * 10) % 2;
+var employeeHpurs;
+let employeeCheck = Math.round(Math.random() * 10) % 3;
+console.log(employeeCheck);
 
-employeeAttendance === IS_EMPLOYEE_PRESENT ? salary = (EMPLOYEE_HOURS * EMPLOYEE_RATE_PER_HOUR) : salary = 0;
+if (employeeCheck == IS_FULL_TIME) {
+    employeeHpurs = 8;
+}
+else if (employeeCheck == IS_PART_TIME) {
+    employeeHpurs = 4;
+}
+else {
+    employeeHpurs = 0;
+}
+salary = employeeHpurs * EMPLOYEE_RATE_PER_HOUR;
 console.log('Employee Daily Wage is ' + salary + ' Rs');

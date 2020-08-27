@@ -11,9 +11,7 @@ var employeeHours;
 let totalSalary = 0;
 let totalEmployeeHours = 0;
 let totalWorkingDays = 0;
-while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
-    totalWorkingDays++;
-    let employeeCheck = Math.round(Math.random() * 10) % 3;
+function workingHours(employeeCheck) {
     switch (employeeCheck) {
         case IS_FULL_TIME:
             employeeHours = 8;
@@ -23,8 +21,11 @@ while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_
             break;
         default:
             employeeHours = 0;
-            break;
     }
+}
+while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
+    totalWorkingDays++;
+    workingHours(Math.round(Math.random() * 10) % 3);
     totalEmployeeHours += employeeHours;
 }
 totalSalary = totalEmployeeHours * EMPLOYEE_RATE_PER_HOUR;

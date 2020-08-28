@@ -10,11 +10,13 @@ const MAXIMUM_HOURS_IN_MONTH = 100;
 //VARIABLES
 var salary;
 var employeeHours;
+var dailyHours;
+var array: number[];
 let totalSalary = 0;
 let totalEmployeeHours = 0;
-let totalWorkingDays = 0;
+let totalWorkingDays: any = 0;
 
-function workingHours(employeeCheck: number) {
+let workingHours = (employeeCheck: number) => {
     switch (employeeCheck) {
         case IS_FULL_TIME:
             employeeHours = 8;
@@ -27,11 +29,17 @@ function workingHours(employeeCheck: number) {
     }
 }
 
-while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
+let dailyWage = (workHours: number) => {
+    let dailyWages = workHours * EMPLOYEE_RATE_PER_HOUR;
+    console.log("Daily Wage : " + dailyWages)
+}
 
+while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
     totalWorkingDays++;
     workingHours(Math.round(Math.random() * 10) % 3);
     totalEmployeeHours += employeeHours;
+    var empDailyWage: Array<number> = [totalEmployeeHours];
+    dailyWage(employeeHours);
 }
 
 totalSalary = totalEmployeeHours * EMPLOYEE_RATE_PER_HOUR;

@@ -25,8 +25,9 @@ let workingHours = (employeeCheck) => {
             employeeHours = 0;
     }
 };
-let dailyWage = (workHours) => {
+let dailyWage = (workHours, days) => {
     let dailyWages = workHours * EMPLOYEE_RATE_PER_HOUR;
+    console.log("Day : " + days);
     console.log("Daily Wage : " + dailyWages);
 };
 while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_OF_WORKING_DAYS) {
@@ -34,7 +35,7 @@ while (totalEmployeeHours < MAXIMUM_HOURS_IN_MONTH && totalWorkingDays < NUMBER_
     workingHours(Math.round(Math.random() * 10) % 3);
     totalEmployeeHours += employeeHours;
     var empDailyWage = [totalEmployeeHours];
-    dailyWage(employeeHours);
+    dailyWage(employeeHours, totalWorkingDays);
 }
 totalSalary = totalEmployeeHours * EMPLOYEE_RATE_PER_HOUR;
 console.log('Employee wages for a month is ' + totalSalary + ' Rs');
